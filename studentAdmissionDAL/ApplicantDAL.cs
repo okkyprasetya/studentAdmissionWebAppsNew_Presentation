@@ -16,7 +16,7 @@ namespace studentAdmissionDAL
     {
         private string GetConnectionString()
         {
-            return ConfigurationManager.ConnectionStrings["MyDbConnectionString"].ConnectionString; 
+            return Helper.GetConnectionString();
         }
         public void addAchievementRecord(ApplicantAchievementRecord entity)
         {
@@ -194,7 +194,6 @@ namespace studentAdmissionDAL
                     throw new ArgumentException(ex.Message);
                 }
             }
-            
         }
 
         public void register(Users entity)

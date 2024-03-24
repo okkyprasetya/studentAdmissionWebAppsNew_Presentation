@@ -3,15 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34616.47
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "studentAdmissionBO", "studentAdmissionBO\studentAdmissionBO.csproj", "{917C7DBF-7C3E-4D11-B5F3-1463432BC36B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "studentAdmissionBO", "studentAdmissionBO\studentAdmissionBO.csproj", "{917C7DBF-7C3E-4D11-B5F3-1463432BC36B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "studentAdmissionDAL", "studentAdmissionDAL\studentAdmissionDAL.csproj", "{FCBEE7A1-27A6-48C6-8AE5-26E087843136}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "studentAdmissionDAL", "studentAdmissionDAL\studentAdmissionDAL.csproj", "{FCBEE7A1-27A6-48C6-8AE5-26E087843136}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "WebPage", "WebPage\WebPage.vbproj", "{CD8E53D2-B177-494B-AE08-1CEEF98E43D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "studentAdmissionDTO", "studentAdmissionDTO\studentAdmissionDTO.csproj", "{C758BDF4-351E-4592-8E65-506A6998887B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "studentAdmissionDTO", "studentAdmissionDTO\studentAdmissionDTO.csproj", "{C758BDF4-351E-4592-8E65-506A6998887B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "studentAdmissionBLL", "studentAdmissionBLL\studentAdmissionBLL.csproj", "{055214C7-F687-4C56-99CB-0BFFBD7A2A28}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "studentAdmissionBLL", "studentAdmissionBLL\studentAdmissionBLL.csproj", "{055214C7-F687-4C56-99CB-0BFFBD7A2A28}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MVCPages", "MVCPages\MVCPages.csproj", "{80BE52F7-5CE0-4B53-94FA-34FDAB206E1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{63996414-26AA-4396-A1DC-2B078533619B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{055214C7-F687-4C56-99CB-0BFFBD7A2A28}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{055214C7-F687-4C56-99CB-0BFFBD7A2A28}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{055214C7-F687-4C56-99CB-0BFFBD7A2A28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80BE52F7-5CE0-4B53-94FA-34FDAB206E1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80BE52F7-5CE0-4B53-94FA-34FDAB206E1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80BE52F7-5CE0-4B53-94FA-34FDAB206E1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80BE52F7-5CE0-4B53-94FA-34FDAB206E1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63996414-26AA-4396-A1DC-2B078533619B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63996414-26AA-4396-A1DC-2B078533619B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63996414-26AA-4396-A1DC-2B078533619B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63996414-26AA-4396-A1DC-2B078533619B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
