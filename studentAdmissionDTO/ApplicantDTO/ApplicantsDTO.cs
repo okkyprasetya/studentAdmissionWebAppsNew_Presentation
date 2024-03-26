@@ -16,6 +16,7 @@ namespace studentAdmissionDTO.ApplicantDTO
         public int ScholarshipID { get; set; }
         public int countVerif { get; set; }
         public bool isFinal { get; set; }
+        public string token { get; set; }
         public ScholarshipDTO scholarship { get; set; }
         public PersonalDataDTO personalData { get; set; }
         public AcademicDataDTO academicData { get; set; }

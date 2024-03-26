@@ -7,9 +7,7 @@ namespace studentAdmissionDTO.ApplicantDTO
     public class UpdateAcademicDataDTO
     {
         public int UGDataID { get; set; }
-
         public int UADataID { get; set; }
-        public ApplicantsDTO applicant { get; set; }
         public int RaportSummaries { get; set; }
         public String RaportDocument { get; set; }
     }

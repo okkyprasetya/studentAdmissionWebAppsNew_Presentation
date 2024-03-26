@@ -8,6 +8,7 @@ using studentAdmissionDTO.ApplicantDTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace studentAdmissionBLL
 {
@@ -322,7 +323,6 @@ namespace studentAdmissionBLL
             {
                 var PersonalData = new ApplicantPersonalData
                 {
-                    UPDataID = entity.UPDataID,
                     FatherName = entity.FatherName,
                     FatherAddress = entity.FatherAddress,
                     FatherJob = entity.FatherJob,
@@ -349,8 +349,7 @@ namespace studentAdmissionBLL
             try
             {
                 var AcademicData = new ApplicantAcademicData
-                {
-                    UADataID = entity.UADataID,
+                { 
                     RaportSummaries = entity.RaportSummaries,
                     RaportDocument = entity.RaportDocument,
                 };
@@ -372,6 +371,38 @@ namespace studentAdmissionBLL
             {
                 // Log the error or handle it as needed
                 throw new Exception("Error while deleting achievement record: " + ex.Message);
+            }
+        }
+
+        public async Task<string> loginAsync(string email, string password)
+        {
+            string status = string.Empty;
+            status = _applicantDAL.login(email, password);
+            return status;
+        }
+
+        public List<RankDTO> GetRank()
+        {
+            List<RankDTO> ranks = new List<RankDTO>();
+            try
+            {
+                var Ranks = _applicantDAL.GetRank();
+                foreach (var rank in Ranks)
+                {
+                    ranks.Add(new RankDTO
+                    {
+                        Rank = rank.Rank,
+                        RegistrationID = rank.RegistrationID,
+                        Name = rank.Name,
+                        TotalScore = rank.TotalScore,
+                        status = rank.status
+                    });
+                }
+                return ranks;
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Error fetching data: " + ex.Message);
             }
         }
     }

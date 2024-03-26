@@ -5,12 +5,14 @@ using studentAdmissionDTO.ApplicantDTO;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using System.Xml.Serialization;
 
 namespace studentAdmissionBLL.BLLInterface
 {
     public interface IApplicant:IUsers
     {
+        Task<string> loginAsync(string email, string password);
         void finalizeData(int uid);
         void completeApplicantGeneralData(CreateApplicantDTO entity);
         void completeApplicantPersonalData(UpdatePersonalDataDTO entity);
@@ -25,5 +27,6 @@ namespace studentAdmissionBLL.BLLInterface
         AcademicDataDTO getAcademicData(string email);
         List<AchievementRecordDTO> getAchievementRecord(string email);
         PersonalDataDTO getPersonalData(string email);
+        List<RankDTO> GetRank();
     }
 }

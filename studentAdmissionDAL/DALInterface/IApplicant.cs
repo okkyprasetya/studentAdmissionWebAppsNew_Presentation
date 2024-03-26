@@ -22,6 +22,7 @@ namespace studentAdmissionDAL.DALInterface
         ApplicantAcademicData getAcademicData(string email);
         List<ApplicantAchievementRecord> getAchievementRecord(string email);
         ApplicantPersonalData getPersonalData(string email);
+        List<RankBO> GetRank();
 
     }
 }

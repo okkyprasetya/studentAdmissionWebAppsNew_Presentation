@@ -60,10 +60,6 @@ namespace studentAdmissionDAL
                 try
                 {
                     int result = conn.Execute(procedure, parameter, commandType: System.Data.CommandType.StoredProcedure);
-                    if (result != 1)
-                    {
-                        throw new ArgumentException("Update academic data Failed");
-                    }
                 }
                 catch (Exception ex)
                 {
@@ -125,10 +121,6 @@ namespace studentAdmissionDAL
                 try
                 {
                     int result = conn.Execute(procedure, parameter, commandType: System.Data.CommandType.StoredProcedure);
-                    if (result != 1)
-                    {
-                        throw new ArgumentException("Register Failed");
-                    }
                 }
                 catch (Exception ex)
                 {
@@ -536,6 +528,41 @@ namespace studentAdmissionDAL
             {
                 throw new Exception("Error deleting achievement record: " + ex.Message);
             }
+        }
+
+        public List<RankBO> GetRank()
+        {
+            List<RankBO> rankList = new List<RankBO>();
+            using (SqlConnection conn = new SqlConnection(GetConnectionString()))
+            {
+                using (SqlCommand cmd = new SqlCommand("dbo.GetRank", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    conn.Open();
+                    SqlDataReader dr = cmd.ExecuteReader();
+
+                    if (dr.HasRows)
+                    {
+                        while (dr.Read())
+                        {
+                            RankBO rank = new RankBO()
+                            {
+                                Rank = Convert.ToInt32(dr["Rank"]),
+                                RegistrationID = (int)dr["RegistrationID"],
+                                Name = dr["Name"].ToString(),
+                                TotalScore = (int)dr["TotalScore"],
+                                status = dr["Status"].ToString()
+                            };
+                            rankList.Add(rank);
+                        }
+                    }
+
+                    dr.Close();
+                }
+            }
+
+            return rankList;
         }
     }
 }
